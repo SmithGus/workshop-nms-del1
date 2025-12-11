@@ -1,152 +1,118 @@
-================================================================================
-NÄTVERKSRAPPORT - TechCorp AB
-================================================================================
-Datauppdatering: 2024-09-30T10:30:00
-
-Totalt antal enheter i nätet: 40
-
-EXECUTIVE SUMMARY
-------------------
-- Kritiskt: 2 enheter offline.
-- Varning : 3 enheter med varningsstatus.
-- Stabilitet: 9 enheter har låg uptime (< 30 dagar).
-- Kapacitet: 11 switchar har hög portanvändning (> 80%).
-
-Sammanfattning:
-  Det finns 2 offline-enheter som behöver felsökas direkt,
-  eftersom de påverkar driften och användarnas tillgång till nätet.
-  Datacentret har mycket hög belastning på flera switchar. Detta kan
-  leda till kapacitetsproblem framöver om inget görs.
-  På huvudkontoret ligger också flera switchar högt i portanvändning.
-  Det kan behöva ses över för att undvika framtida flaskhalsar.
-  Flera enheter har kort uptime, vilket kan betyda att de startats om
-  nyligen eller att det finns någon form av instabilitet.
-
-EISENHOWER-MATRIS – ÅTGÄRDSÖVERSIKT
------------------------------------
-
-Viktigt & Bråttom (Do Now)
-Åtgärder som påverkar drift, tillgänglighet eller säkerhet direkt.
-- Felsöka de två offline-enheterna (SW-ACCESS-03, AP-LAGER-02).
-- Kontrollera varningsenheterna (AP-FLOOR2-02, RT-LAGER-01, SW-DC-TOR-02).
-- Följa upp enheter med extremt låg uptime (0–5 dagar) för att säkerställa stabilitet.
-
-Viktigt men Inte Bråttom (Plan)
-Åtgärder som kräver planering, budget eller kapacitetsbeslut.
-- Utreda kapacitetsproblem i Datacenter (flera switchar >95% portanvändning).
-- Planera eventuell portexpansion eller omfördelning av trafik.
-- Överväga bättre lastbalansering kring AP-FLOOR2-02 (45 klienter).
-
-Mindre Viktigt men Bråttom (Delegate)
-Kan hanteras av 1st line-support eller driftpersonal.
-- Följa upp enheter med 8–30 dagars uptime för att se om omstarter varit planerade.
-- Dubbelkolla dokumentation för VLAN-fördelning.
-
-Mindre Viktigt och Inte Bråttom (Monitor)
-Inget akut – håll koll men inga åtgärder behövs just nu.
-- Switchar under 80% portbelastning.
-- Sites där alla enheter är online och stabila (t.ex. Kontor Malmö, Säkerhetskopia).
-
-ITIL-ÖVERSIKT – KOPPLING TILL NÄTVERKSRAPPORTEN
------------------------------------------------
-
-Incident Management
-- Offline-enheterna (t.ex. SW-ACCESS-03, AP-LAGER-02) räknas som incidenter
-  eftersom de påverkar tillgänglighet och behöver åtgärdas direkt.
-
-Problem Management
-- Enheter med låg uptime (0–5 dagar) kan tyda på underliggande problem,
-  till exempel instabilitet eller återkommande omstarter. Dessa bör följas upp.
-
-Capacity Management
-- Switchar med mycket hög portbelastning i Datacenter (>95%) visar att
-  kapaciteten börjar nå sin gräns och att planering för utbyggnad kan behövas.
-
-Availability Management
-- Varningsenheter och hög belastning kan påverka nätets tillgänglighet och SLA.
-  Det är viktigt att dessa följs upp i driftmöten och övervakas över tid.
-
-
-ENHETER MED PROBLEM
--------------------
-Status: OFFLINE
-  SW-ACCESS-03    192.168.1.5     switch       Huvudkontor
-  AP-LAGER-02     192.168.200.102 access_point Lager
-
-Status: WARNING
-  AP-FLOOR2-02    192.168.20.102  access_point Huvudkontor
-  RT-LAGER-01     192.168.2.254   router       Lager
-  SW-DC-TOR-02    10.0.1.2        switch       Datacenter
-
-ENHETER MED LÅG UPTIME (< 30 dagar)
 ------------------------------------
-  SW-ACCESS-03    0     dagar   switch       Huvudkontor
-  SW-ACCESS-05    15    dagar   switch       Huvudkontor
-  AP-FLOOR2-01    12    dagar   access_point Huvudkontor
-  AP-FLOOR2-02    2     dagar   access_point Huvudkontor
-  SW-LAGER-02     23    dagar   switch       Lager
-  RT-LAGER-01     2     dagar   router       Lager
-  AP-LAGER-02     0     dagar   access_point Lager
-  SW-MAL-ACC-02   8     dagar   switch       Kontor Malmö
-  SW-DC-TOR-02    5     dagar   switch       Datacenter
+Nätverksrapport för TechCorp AB
+Uppdaterad av NMS: 2024-09-30T10:30:00
+Skapad av script: 2025-12-11 21:23
+------------------------------------
 
-STATISTIK PER ENHETSTYP
+Totalt antal enheter: 40
+
+== Sammanfattning ==
+
+- Offline: 2
+- Varning: 3
+- Kort uptime (<30 dagar): 9
+- Switchar med hög portanvändning: 11
+
+OBS: Det finns enheter som är offline, behöver kollas.
+Flera switchar har nästan fulla portar.
+Enheter har startats om nyligen eller är ostabila.
+
+Offline och varning:
+---------------------
+SW-ACCESS-03 - offline - 192.168.1.5 - Huvudkontor
+AP-FLOOR2-02 - warning - 192.168.20.102 - Huvudkontor
+RT-LAGER-01 - warning - 192.168.2.254 - Lager
+AP-LAGER-02 - offline - 192.168.200.102 - Lager
+SW-DC-TOR-02 - warning - 10.0.1.2 - Datacenter
+
+Uptime under 30 dagar:
 ------------------------
-  Switch      : 18 st
-  Router      : 6 st
-  Access_point: 9 st
-  Firewall    : 5 st
-  Load_balancer: 2 st
+SW-ACCESS-03 (0 dagar) - switch - Huvudkontor
+SW-ACCESS-05 (15 dagar) - switch - Huvudkontor
+AP-FLOOR2-01 (12 dagar) - access_point - Huvudkontor
+AP-FLOOR2-02 (2 dagar) - access_point - Huvudkontor
+SW-LAGER-02 (23 dagar) - switch - Lager
+RT-LAGER-01 (2 dagar) - router - Lager
+AP-LAGER-02 (0 dagar) - access_point - Lager
+SW-MAL-ACC-02 (8 dagar) - switch - Kontor Malmö
+SW-DC-TOR-02 (5 dagar) - switch - Datacenter
 
-PORTANVÄNDNING FÖR SWITCHAR
-----------------------------
-Totalt används 541 av 676 portar (80.0% användning).
+Enhetstyper i nätet:
+---------------------
+switch: 18 st
+router: 6 st
+access_point: 9 st
+firewall: 5 st
+load_balancer: 2 st
 
-Per site:
-  Huvudkontor     Switchar:  7  Portar: 162/216 (75.0%)
-  Lager           Switchar:  2  Portar: 57/96 (59.4%)
-  Kontor Malmö    Switchar:  3  Portar: 79/96 (82.3%)
-  Datacenter      Switchar:  5  Portar: 231/240 (96.2%)
-  Säkerhetskopia  Switchar:  1  Portar: 12/28 (42.9%)
+Portanvändning (switchar):
+---------------------------
+Totalt: 541/676 portar använda (80.0%)
 
-SWITCHAR MED HÖG PORTANVÄNDNING (> 80%)
-----------------------------------------
-  SW-CORE-01      42/48 portar  (87.5%)  Huvudkontor
-  SW-DIST-02      22/24 portar  (91.7%)  Huvudkontor
-  SW-ACCESS-05    23/24 portar  (95.8%)  Huvudkontor
-  SW-LAGER-02     45/48 portar  (93.8%)  Lager
-  SW-MAL-ACC-01   20/24 portar  (83.3%)  Kontor Malmö
-  SW-MAL-ACC-02   24/24 portar  (100.0%)  Kontor Malmö
-  SW-DC-CORE-01   46/48 portar  (95.8%)  Datacenter
-  SW-DC-CORE-02   46/48 portar  (95.8%)  Datacenter
-  SW-DC-TOR-01    48/48 portar  (100.0%)  Datacenter
-  SW-DC-TOR-02    47/48 portar  (97.9%)  Datacenter
-  SW-DC-TOR-03    44/48 portar  (91.7%)  Datacenter
+Switchar med över 80% portar använda:
+- SW-CORE-01 (42/48) 87.5% - Huvudkontor
+- SW-DIST-02 (22/24) 91.7% - Huvudkontor
+- SW-ACCESS-05 (23/24) 95.8% - Huvudkontor
+- SW-LAGER-02 (45/48) 93.8% - Lager
+- SW-MAL-ACC-01 (20/24) 83.3% - Kontor Malmö
+- SW-MAL-ACC-02 (24/24) 100.0% - Kontor Malmö
+- SW-DC-CORE-01 (46/48) 95.8% - Datacenter
+- SW-DC-CORE-02 (46/48) 95.8% - Datacenter
+- SW-DC-TOR-01 (48/48) 100.0% - Datacenter
+- SW-DC-TOR-02 (47/48) 97.9% - Datacenter
+- SW-DC-TOR-03 (44/48) 91.7% - Datacenter
 
-VLAN-ÖVERSIKT
--------------
-Totalt antal unika VLAN: 19
+VLAN-lista:
+------------
+Antal VLANs: 19
 VLANs: 10, 20, 30, 40, 50, 100, 110, 120, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 2100
 
-STATISTIK PER SITE
-------------------
-Huvudkontor (Stockholm):
-  Enheter: 15 (online: 13, offline: 1, warning: 1)
-  Kontakt: Anna Andersson
+Enhetsstatus per plats:
+------------------------
+Huvudkontor (Stockholm) - Totalt: 15, Online: 13, Offline: 1, Warning: 1
+Kontaktperson: Anna Andersson
 
-Lager (Göteborg):
-  Enheter: 5 (online: 3, offline: 1, warning: 1)
-  Kontakt: Björn Björnsson
+Lager (Göteborg) - Totalt: 5, Online: 3, Offline: 1, Warning: 1
+Kontaktperson: Björn Björnsson
 
-Kontor Malmö (Malmö):
-  Enheter: 7 (online: 7, offline: 0, warning: 0)
-  Kontakt: Cecilia Carlsson
+Kontor Malmö (Malmö) - Totalt: 7, Online: 7, Offline: 0, Warning: 0
+Kontaktperson: Cecilia Carlsson
 
-Datacenter (Stockholm):
-  Enheter: 10 (online: 9, offline: 0, warning: 1)
-  Kontakt: David Davidsson
+Datacenter (Stockholm) - Totalt: 10, Online: 9, Offline: 0, Warning: 1
+Kontaktperson: David Davidsson
 
-Säkerhetskopia (Umeå):
-  Enheter: 3 (online: 3, offline: 0, warning: 0)
-  Kontakt: Erik Eriksson
+Säkerhetskopia (Umeå) - Totalt: 3, Online: 3, Offline: 0, Warning: 0
+Kontaktperson: Erik Eriksson
+
+Att göra – enligt Eisenhower:
+=============================
+
+Viktigt och Bråttom:
+- Kolla enheter som är offline.
+- Titta på enheter med varningsstatus.
+- Se över enheter med väldigt kort uptime.
+
+Viktigt men inte Bråttom:
+- Planera för att hantera switchar med nästan fulla portar.
+
+Inte så viktigt men Bråttom:
+- Uppdatera dokumentation för VLAN.
+
+Inte viktigt och inte bråttom:
+- Håll koll på platser där allt funkar bra.
+
+ITIL-koppling:
+==============
+
+Incident Management:
+- Offline-enheter är incidenter som måste fixas snabbt.
+
+Problem Management:
+- Enheter med låg uptime kan ha problem som måste undersökas.
+
+Capacity Management:
+- Vissa switchar är nästan fulla – kanske behövs fler portar.
+
+Availability Management:
+- Varningar och instabil uptime kan påverka nätets tillgänglighet.
 

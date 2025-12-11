@@ -1,25 +1,26 @@
-# Network Report
+# Nätverksrapport
 
-Detta projekt innehåller ett Python-script som läser nätverksdata från `network_devices.json` och skapar en rapport i `network_report.txt`.
+Detta projekt innehåller ett Python-script som läser nätverksdata från filen `network_devices.json` och skapar en textbaserad rapport som sparas i `network_report.txt`.
 
-## Funktioner
+## Vad scriptet gör
 
-Scriptet gör följande:
+Scriptet:
 
-- Läser in alla enheter från JSON-filen  
-- Sammanställer en Executive Summary  
-- Skapar en Eisenhower-matris över prioriterade åtgärder  
-- Kopplar nätverksstatus till ITIL-processer  
-- Visar offline- och varningsenheter  
-- Identifierar enheter med låg uptime  
-- Räknar antal enheter per typ  
-- Analyserar portanvändning för switchar  
-- Listar switchar med >80% belastning  
-- Samlar alla VLAN  
-- Skapar en översikt per site  
+- Läser in alla enheter från JSON-filen
+- Sammanfattar status i en "Executive Summary"
+- Visar viktiga åtgärder i en enkel Eisenhower-matris
+- Kopplar rapportens resultat till ITIL-processer
+- Visar enheter som är offline eller har varningar
+- Hittar enheter med låg uptime (t.ex. < 30 dagar)
+- Räknar antal enheter av varje typ (switch, router, etc.)
+- Visar hur mycket portar används på switchar
+- Listar switchar med hög portbelastning (> 80%)
+- Samlar alla VLAN som används i nätverket
+- Ger överblick per site (t.ex. Huvudkontor, Datacenter)
 
-## Körning
+## Så kör du scriptet
 
+Kör kommandot i terminalen:
+
+```bash
 python network_report.py
-
-Rapporten genereras automatiskt som: network_report.txt
