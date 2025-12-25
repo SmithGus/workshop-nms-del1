@@ -1,118 +1,116 @@
 ------------------------------------
 Nätverksrapport för TechCorp AB
 Uppdaterad av NMS: 2024-09-30T10:30:00
-Skapad av script: 2025-12-11 21:23
+Skapad av script: 2025-12-25 12:17
 ------------------------------------
 
 Totalt antal enheter: 40
 
-== Sammanfattning ==
+Sammanfattning
+--------------------
 
-- Offline: 2
-- Varning: 3
-- Kort uptime (<30 dagar): 9
+- Offline-enheter: 2
+- Enheter med varning: 3
+- Enheter med kort uptime (<30 dagar): 9
 - Switchar med hög portanvändning: 11
 
-OBS: Det finns enheter som är offline, behöver kollas.
-Flera switchar har nästan fulla portar.
-Enheter har startats om nyligen eller är ostabila.
+Det finns enheter som är offline och bör följas upp.
+Flera switchar har hög portbelastning.
+Vissa enheter har startats om nyligen eller uppvisar instabilitet.
 
-Offline och varning:
+Offline och varning
 ---------------------
-SW-ACCESS-03 - offline - 192.168.1.5 - Huvudkontor
-AP-FLOOR2-02 - warning - 192.168.20.102 - Huvudkontor
-RT-LAGER-01 - warning - 192.168.2.254 - Lager
-AP-LAGER-02 - offline - 192.168.200.102 - Lager
-SW-DC-TOR-02 - warning - 10.0.1.2 - Datacenter
+SW-ACCESS-03 – offline – 192.168.1.5 – Huvudkontor
+AP-FLOOR2-02 – warning – 192.168.20.102 – Huvudkontor
+RT-LAGER-01 – warning – 192.168.2.254 – Lager
+AP-LAGER-02 – offline – 192.168.200.102 – Lager
+SW-DC-TOR-02 – warning – 10.0.1.2 – Datacenter
 
-Uptime under 30 dagar:
-------------------------
-SW-ACCESS-03 (0 dagar) - switch - Huvudkontor
-SW-ACCESS-05 (15 dagar) - switch - Huvudkontor
-AP-FLOOR2-01 (12 dagar) - access_point - Huvudkontor
-AP-FLOOR2-02 (2 dagar) - access_point - Huvudkontor
-SW-LAGER-02 (23 dagar) - switch - Lager
-RT-LAGER-01 (2 dagar) - router - Lager
-AP-LAGER-02 (0 dagar) - access_point - Lager
-SW-MAL-ACC-02 (8 dagar) - switch - Kontor Malmö
-SW-DC-TOR-02 (5 dagar) - switch - Datacenter
+Uptime under 30 dagar
+----------------------
+SW-ACCESS-03 (0 dagar) – switch – Huvudkontor
+SW-ACCESS-05 (15 dagar) – switch – Huvudkontor
+AP-FLOOR2-01 (12 dagar) – access_point – Huvudkontor
+AP-FLOOR2-02 (2 dagar) – access_point – Huvudkontor
+SW-LAGER-02 (23 dagar) – switch – Lager
+RT-LAGER-01 (2 dagar) – router – Lager
+AP-LAGER-02 (0 dagar) – access_point – Lager
+SW-MAL-ACC-02 (8 dagar) – switch – Kontor Malmö
+SW-DC-TOR-02 (5 dagar) – switch – Datacenter
 
-Enhetstyper i nätet:
----------------------
+Enhetstyper i nätverket
+-----------------------
 switch: 18 st
 router: 6 st
 access_point: 9 st
 firewall: 5 st
 load_balancer: 2 st
 
-Portanvändning (switchar):
+Portanvändning (switchar)
 ---------------------------
-Totalt: 541/676 portar använda (80.0%)
+Totalt använda portar: 541/676 (80.0%)
 
-Switchar med över 80% portar använda:
-- SW-CORE-01 (42/48) 87.5% - Huvudkontor
-- SW-DIST-02 (22/24) 91.7% - Huvudkontor
-- SW-ACCESS-05 (23/24) 95.8% - Huvudkontor
-- SW-LAGER-02 (45/48) 93.8% - Lager
-- SW-MAL-ACC-01 (20/24) 83.3% - Kontor Malmö
-- SW-MAL-ACC-02 (24/24) 100.0% - Kontor Malmö
-- SW-DC-CORE-01 (46/48) 95.8% - Datacenter
-- SW-DC-CORE-02 (46/48) 95.8% - Datacenter
-- SW-DC-TOR-01 (48/48) 100.0% - Datacenter
-- SW-DC-TOR-02 (47/48) 97.9% - Datacenter
-- SW-DC-TOR-03 (44/48) 91.7% - Datacenter
+Switchar med över 80 % portanvändning:
+- SW-CORE-01 (42/48) 87.5% – Huvudkontor
+- SW-DIST-02 (22/24) 91.7% – Huvudkontor
+- SW-ACCESS-05 (23/24) 95.8% – Huvudkontor
+- SW-LAGER-02 (45/48) 93.8% – Lager
+- SW-MAL-ACC-01 (20/24) 83.3% – Kontor Malmö
+- SW-MAL-ACC-02 (24/24) 100.0% – Kontor Malmö
+- SW-DC-CORE-01 (46/48) 95.8% – Datacenter
+- SW-DC-CORE-02 (46/48) 95.8% – Datacenter
+- SW-DC-TOR-01 (48/48) 100.0% – Datacenter
+- SW-DC-TOR-02 (47/48) 97.9% – Datacenter
+- SW-DC-TOR-03 (44/48) 91.7% – Datacenter
 
-VLAN-lista:
-------------
-Antal VLANs: 19
-VLANs: 10, 20, 30, 40, 50, 100, 110, 120, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 2100
+VLAN-översikt
+-------------
+Antal VLAN: 19
+VLAN: 10, 20, 30, 40, 50, 100, 110, 120, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 2100
 
-Enhetsstatus per plats:
+Enhetsstatus per plats
 ------------------------
-Huvudkontor (Stockholm) - Totalt: 15, Online: 13, Offline: 1, Warning: 1
+Huvudkontor (Stockholm) – Totalt: 15, Online: 13, Offline: 1, Warning: 1
 Kontaktperson: Anna Andersson
 
-Lager (Göteborg) - Totalt: 5, Online: 3, Offline: 1, Warning: 1
+Lager (Göteborg) – Totalt: 5, Online: 3, Offline: 1, Warning: 1
 Kontaktperson: Björn Björnsson
 
-Kontor Malmö (Malmö) - Totalt: 7, Online: 7, Offline: 0, Warning: 0
+Kontor Malmö (Malmö) – Totalt: 7, Online: 7, Offline: 0, Warning: 0
 Kontaktperson: Cecilia Carlsson
 
-Datacenter (Stockholm) - Totalt: 10, Online: 9, Offline: 0, Warning: 1
+Datacenter (Stockholm) – Totalt: 10, Online: 9, Offline: 0, Warning: 1
 Kontaktperson: David Davidsson
 
-Säkerhetskopia (Umeå) - Totalt: 3, Online: 3, Offline: 0, Warning: 0
+Säkerhetskopia (Umeå) – Totalt: 3, Online: 3, Offline: 0, Warning: 0
 Kontaktperson: Erik Eriksson
 
-Att göra – enligt Eisenhower:
-=============================
+Att göra – enligt Eisenhower
+-----------------------------
 
-Viktigt och Bråttom:
-- Kolla enheter som är offline.
-- Titta på enheter med varningsstatus.
-- Se över enheter med väldigt kort uptime.
+Viktigt och bråttom:
+- Följa upp offline-enheter
+- Hantera enheter med varningsstatus
+- Kontrollera enheter med mycket kort uptime
 
-Viktigt men inte Bråttom:
-- Planera för att hantera switchar med nästan fulla portar.
+Viktigt men inte bråttom:
+- Planera kapacitet för switchar med hög portbelastning
 
-Inte så viktigt men Bråttom:
-- Uppdatera dokumentation för VLAN.
+Inte bråttom:
+- Fortsatt uppföljning av stabila platser
 
-Inte viktigt och inte bråttom:
-- Håll koll på platser där allt funkar bra.
-
-ITIL-koppling:
-==============
+ITIL-koppling
+-------------
 
 Incident Management:
-- Offline-enheter är incidenter som måste fixas snabbt.
+- Offline- och varningsenheter hanteras som incidenter
 
 Problem Management:
-- Enheter med låg uptime kan ha problem som måste undersökas.
+- Upprepade omstarter och låg uptime bör analyseras vidare
 
 Capacity Management:
-- Vissa switchar är nästan fulla – kanske behövs fler portar.
+- Hög portanvändning indikerar framtida kapacitetsbehov
 
 Availability Management:
-- Varningar och instabil uptime kan påverka nätets tillgänglighet.
+- Stabil uptime och få varningar bidrar till hög tillgänglighet
 
